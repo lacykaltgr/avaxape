@@ -97,6 +97,7 @@ export default function Referral() {
 
   return (
     <div className={styles.card}>
+      <h1>Referral</h1>
       <div className={styles.data}>
         <div>
           <h4>Users invited</h4>

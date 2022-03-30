@@ -43,6 +43,8 @@ export default function Layout({
         <meta name="og:title" content={pageTitle} />
         <meta name="og:description" content={pageDescription} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel = "icon" href ="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" 
+        type = "image/x-icon"></link>
       </Head>
       <HeaderInfo />
       <Header />

@@ -13,7 +13,7 @@ const { invest, withdraw } =
 
   return (
     <div className={styles.home}>
-      <p>Stake Your AVAX & Earn up to 20% Daily</p>
+      <h1>Choose Your Plan</h1>
       <Invest />
       <Withdraw />
       <Referral />

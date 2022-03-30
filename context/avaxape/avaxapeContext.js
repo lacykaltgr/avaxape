@@ -32,7 +32,7 @@ export const AvaxApeProvider = ({ children }) => {
       const signer = provider.getSigner()
 
       // This address will be different for every network
-      const contractAddress = "0xCD85bAf973F7A720f96Df606C9468347B8BeB3ce"
+      const contractAddress = "0xA781a3bc089A242C6651794a5A26c3181d36F68e"
       // Initialise the contract instance
 
       console.log(AVAXAPE.abi, signer)

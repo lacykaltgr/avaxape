@@ -1,5 +1,11 @@
 @import '../../styles/_all';
 
+$base: #5BB9B8;
+$subtle: #54a1a0;
+$rain: #2C3845;
+$poppy: #BD2A4E;
+$mobile-small: 460px;
+$mobile: 720px;
 
 
   .form {
@@ -30,5 +36,78 @@
   }
 
   .card {
-      height: 500px;
+      min-height: 100px;
+
+      table {
+        display: block;
+        width: 100%;
+        align-items: center;
+      }
+
+      tr {
+        padding-bottom: 10px;
+      }
+      td {
+        padding: 10px 10px 0;
+        text-align: center;
+        font-size: 16pt;
+        background-color: darkslateblue;
+        color: white;
+        margin: auto; 
+        &:before {
+          content: attr(data-title);
+          color: lighten($rain,35%);
+          text-transform: uppercase;
+          font-size: 1.4rem;
+          padding-right: 10px;
+          display: block;
+        }
+      }
+      
+      th {
+        text-align: left;
+        font-weight: 1000;
+        font-size: 20pt;
+      }
+      thead {
+        th {
+          background-color: darken($rain,6%);
+          color: #fff;
+          border: 1px solid darken($rain,6%);
+        }
+      }
+      tfoot {
+        th {
+          display: block;
+          padding: 10px;
+          text-align: center;
+          color: lighten($rain,55%);
+        }
+      }
   }
+
+
+.card {
+  border: 6px solid #478bfb;
+  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  p {
+    font-size: 20pt;
+  }
+
+  h4 {
+    font-size:  15pt;
+  }
+
+  p {
+    font-size: 30pt;
+    font-weight: bold;
+  }
+}
+
+
+
+
+

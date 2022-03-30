@@ -107,6 +107,7 @@ export default function Withdraw() {
   return (
 
     <div className={styles.card}>
+      <h1>Withdrawal</h1>
       <div className={styles.data}>
       <div>
         <h4>Total deposits</h4>

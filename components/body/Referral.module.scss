@@ -2,9 +2,10 @@
 
 
 .card {
-  max-height: 850px;
-  border: 6px solid orange;
-
+  border: 6px solid #478bfb;
+  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  margin-top: 20px;
+  margin-bottom: 20px;
 
 
   p {
@@ -22,10 +23,11 @@
 
 
     &Box {
+      background-color: white;
       padding: 5px;
       align-items: center;
       border-radius: 10px;
-      border: 2px solid blue;
+      border: 6px solid gold;
       display: flex;
       justify-content: space-around;
       max-width: 90%;
@@ -43,12 +45,12 @@
 .copy {
   height: 40px;
   width: 40px;
-  border: 3px solid blue;
+  border: 3px solid gold;
   border-radius: 10px;
   background-color: white;
 
   &:hover {
-    background-color: blue;
+    background-color: gold;
     color: white;
   }
 }

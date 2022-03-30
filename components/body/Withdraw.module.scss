@@ -2,8 +2,10 @@
 
 
 .card {
-  border: 6px solid purple;
-
+  border: 6px solid #478bfb;
+  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   p {
     font-size: 20pt;
@@ -11,6 +13,11 @@
 
   h4 {
     font-size:  15pt;
+  }
+
+  p {
+    font-size: 30pt;
+    font-weight: bold;
   }
 }
 

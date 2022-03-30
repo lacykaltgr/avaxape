@@ -8,7 +8,6 @@ import { ACCOUNTS_FETCHED } from '../../context/auth/authReducer'
 import styles from './Invest.module.scss'
 
 
-
 export default function Invest() {
 
   const queryParams = new URLSearchParams(window.location.search)
@@ -190,14 +189,14 @@ export default function Invest() {
             onClick={() => handleChoosePlan(1)}
 
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>Alap</h3>
+              <h3 className={styles.CardText}>Iron</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(1, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
               {renderPercents(1, true)}
             </div>
             <div className={styles.cardFooter}>
-              <span>14 Days</span>
+              <span>10 Days</span>
             </div>
           </div>
 
@@ -205,21 +204,21 @@ export default function Invest() {
             className={styles.optionCard + " " + (formState.plan == 2 ? styles.Selected : "")}
             onClick={() => handleChoosePlan(2)}
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>Közép</h3>
+              <h3 className={styles.CardText}>Bronze</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(2, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
               {renderPercents(2, true)}
             </div>
             <div className={styles.cardFooter}>
-              <span>21 Days</span>
+              <span>15 Days</span>
             </div>
           </div>
           <div
             className={styles.optionCard + " " + (formState.plan == 3 ? styles.Selected : "")}
             onClick={() => handleChoosePlan(3)}
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>VIP</h3>
+              <h3 className={styles.CardText}>Silver</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(3, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
@@ -227,7 +226,7 @@ export default function Invest() {
 
             </div>
             <div className={styles.cardFooter}>
-              <span>28 Days</span>
+              <span>20 Days</span>
             </div>
           </div>
 
@@ -246,12 +245,12 @@ export default function Invest() {
           <div className={styles.counter}>Total return:   {formState.calculateFree}</div></div>
         <div className={styles.formSubmitDiv}>
           <button className={styles.formSubmit} type="submit">
-            Deposit
+          {transactionState.state === 'loading'
+          ? 'Sending transaction...'
+          : 'Deposit'}
           </button>
         </div>
-        <p className={styles.Sending}>{transactionState.state === 'loading'
-          ? 'Sending transaction...'
-          : ''}
+        <p className={styles.Sending}>
         </p>
       </div>
 
@@ -262,14 +261,14 @@ export default function Invest() {
             onClick={() => handleChoosePlan(4)}
 
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>Alap</h3>
+              <h3 className={styles.CardText}>Gold</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(4, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
               {renderPercents(4, true)}
             </div>
             <div className={styles.cardFooter}>
-              <span>14 Days</span>
+              <span>10 Days</span>
             </div>
           </div>
 
@@ -277,7 +276,7 @@ export default function Invest() {
             className={styles.optionCard + " " + (formState.plan == 5 ? styles.SelectedLocked : "")}
             onClick={() => handleChoosePlan(5)}
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>Közép</h3>
+              <h3 className={styles.CardText}>Platinum</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(5, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
@@ -285,14 +284,16 @@ export default function Invest() {
 
             </div>
             <div className={styles.cardFooter}>
-              <span>21 Days</span>
+              <span>15 Days</span>
             </div>
           </div>
+
           <div
             className={styles.optionCard + " " + (formState.plan == 6 ? styles.SelectedLocked : "")}
             onClick={() => handleChoosePlan(6)}
           ><div className={styles.innerCard}>
-              <h3 className={styles.CardText}>VIP</h3>
+
+              <h3 className={styles.CardText}>Diamond</h3>
               <h6 className={styles.CardText}>Daily Earnings</h6>
               {renderPercents(6, false)}
               <h6 className={styles.CardText}>Total Earnings</h6>
@@ -300,14 +301,14 @@ export default function Invest() {
 
             </div>
             <div className={styles.cardFooter}>
-              <span>28 Days</span>
+              <span>20 Days</span>
             </div>
           </div>
         </div>
         <div className={styles.formInpRow}>
           <div className={styles.formInpDiv}>
             <input
-              className={styles.formInput}
+              className={styles.formInputLocked}
               name="valueLocked"
               value={formState.valueLocked}
               onChange={handleInputChange}
@@ -316,13 +317,11 @@ export default function Invest() {
           <div className={styles.counter}>Total return:   {formState.calculateLocked}</div></div>
         <div className={styles.formSubmitDiv}>
           <button className={styles.formSubmit} type="submit">
-            Deposit
+          {transactionState.state === 'loading'
+          ? 'Sending transaction...'
+          : 'Deposit'}
           </button>
         </div>
-        <p className={styles.Sending}>{transactionState.state === 'loading'
-          ? 'Sending transaction...'
-          : ''}
-        </p>
       </div>
     </form>
   )
