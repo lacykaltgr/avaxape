@@ -3,10 +3,10 @@
 .button {
   background: transparent;
   border-style: none;
-  border: 1px solid $c-blue-500;
-  border-radius: 4px;
+  border: 2px solid $c-blue-500;
+  border-radius: 8px;
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 16px 32px;
   transition: ease 300ms background-color, ease 300ms border-color, ease 300ms color;
 
   &:hover {

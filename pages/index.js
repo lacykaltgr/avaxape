@@ -1,11 +1,11 @@
 import Layout from '../components/layout/Layout'
-import HomeView from '../views/home/HomeView'
+import HomeView from '../view/HomeView'
 
 export default function Home() {
   return (
     <Layout
       pageTitle=  "Home | AvaxApe"
-      pageDescription="fuckin best scam"
+      pageDescription=""
     >
       <HomeView />
     </Layout>

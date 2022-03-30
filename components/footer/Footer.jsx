@@ -9,7 +9,6 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Built by Lacika
       </a>
     </footer>
   )

@@ -1,24 +1,24 @@
-@import '../../styles/all';
+@import '../../styles/_all';
 
 .error {
   display: flex;
   flex-direction: column;
   color: $c-light-text;
   margin: 0 auto;
-  max-width: 800px;
+  margin-top: 50px;
+  max-width: 1600px;
   width: 100%;
   align-items: center;
 
   &Heading {
-    font-size: 18px;
+    font-size: 30pt;
+  }
+
+  &Action {
+    font-size: 20pt;
   }
 
   @media screen and (min-width: $bp-tablet) {
     padding: $space-md $padding-lg;
-  }
-
-  @media screen and (min-width: $bp-desktop) {
-    max-width: 1024px;
-    margin: 0 auto;
   }
 }

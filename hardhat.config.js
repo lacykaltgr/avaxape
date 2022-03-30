@@ -63,15 +63,13 @@ const config = {
         url: 'https://api.avax-test.network/ext/bc/C/rpc', // Public Avalanche testnet
         gasPrice: 225000000000,
         chainId: 43113,
-        accounts: ["0xb059323ebc42bbfe134251dade0137dbd1e883be107337246864aea10d30c032", 
-                  "0x7b4198529994b0dc604278c99d153cfd069d594753d471171a1d102a10438e07"], // Use your account private key on the Avalanche testnet
+        accounts: ["fd5fc7ff4fcead8f2669daac2234f541d1d064b383b7d925600df3099bdf8b49"], // Use your account private key on the Avalanche testnet
       },
       mainnet: {
         url: 'https://api.avax.network/ext/bc/C/rpc', // Public Avalanche mainnet
         gasPrice: 225000000000,
         chainId: 43114,
-        accounts: ["0xb059323ebc42bbfe134251dade0137dbd1e883be107337246864aea10d30c032", 
-                  /*"0x7b4198529994b0dc604278c99d153cfd069d594753d471171a1d102a10438e07"*/              
+        accounts: ["fd5fc7ff4fcead8f2669daac2234f541d1d064b383b7d925600df3099bdf8b49",               
       ], // Use your account private key on the Avalanche mainnet
       },
     },

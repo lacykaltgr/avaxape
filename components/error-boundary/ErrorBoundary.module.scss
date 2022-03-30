@@ -1,8 +1,8 @@
-@import '../../styles/all';
+@import '../../styles/_all';
 
 .boundary {
   color: $c-light-text;
-  max-width: 500px;
+  max-width: 1000px;
   margin: $space-xxxl auto;
 
   &Button {

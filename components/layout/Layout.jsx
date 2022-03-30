@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-
+import HeaderInfo from '../header/HeaderInfo'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import Error from '../error/Error'
@@ -31,7 +31,11 @@ export default function Layout({
   const hasAccountError = authState.status === ACCOUNTS_ERROR || authState.error
 
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} style={{backgroundImage: "url(" + `${require("../../logo/ape.jpg")}` + ")" , width: "100%",
+    
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    backgroundSize: "cover"}}>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -40,7 +44,7 @@ export default function Layout({
         <meta name="og:description" content={pageDescription} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-
+      <HeaderInfo />
       <Header />
 
       <main className={styles.layoutMain}>

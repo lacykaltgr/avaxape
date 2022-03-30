@@ -12,9 +12,12 @@ import AVAXAPE from '../../artifacts/contracts/newContract.sol/AVAXAPE.json'
 
 import { parseEther } from 'ethers/lib/utils'
 
+import { useSearchParams } from 'react-router-dom'
+
 const AvaxApeContext = createContext()
 
 export const AvaxApeProvider = ({ children }) => {
+
   const { authState } = useAuthContext()
   // Create a state variable to hold an instance of the AvaxApe contract
   const [contractInterface, setContractInterface] = useState()
@@ -42,19 +45,25 @@ export const AvaxApeProvider = ({ children }) => {
 
       // Store this instance in the state
       setContractInterface(contract)
+      
 
     }
   }, [authState.data])
 
 
+//form : érték, plan
+//return: ()
   const invest = useCallback(
-    async ({ messageData, onSuccess, onError }) => {
+    async ({ formData, onSuccess, onError }) => {
 
       try {
-
-      const value = messageData.value
-      const plan = messageData.plan
+      
+      
+      const plan = formData.plan
+      const value = plan > 3 ? formData.valueLocked : formData.valueFree
+      const referrer = formData.referrer ? formData.referrer : "0x0000000000000000000000000000000000000000"
       const overrides = {}
+
 
       overrides.value = parseEther(value)
 
@@ -62,7 +71,7 @@ export const AvaxApeProvider = ({ children }) => {
       
 
       const tx = await contractInterface.invest(
-      "0x89CC6846fd8199Fb077718A89eB3785a13243470",
+       referrer,
        plan,
        overrides,
       )
@@ -78,7 +87,7 @@ export const AvaxApeProvider = ({ children }) => {
     [contractInterface]
   )
 
-
+//return: ()
   const withdraw = useCallback(
     async ({onSuccess, onError}) => {
       try {
@@ -95,22 +104,24 @@ export const AvaxApeProvider = ({ children }) => {
     [contractInterface] 
   )
 
-
-  const getPlanInfo = useCallback(
-     async ({planNumber, onSuccess, onError})  => {
+//plan száma
+//return: (bn) smart contract egyenlege
+  const getContractBalance = useCallback(
+     async ({onSuccess, onError})  => {
       try {
-        const result = await contractInterface.getPlanInfo(planNumber)
+        const result = await contractInterface.getContractBalance()
 
         if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
         
-        return result
+         
       }
       catch (error){
         if (onError && typeof onError == 'function') onError(error)
       }
   }, [contractInterface])
 
-
+//plan száma  
+//return: (bn, bn) plan hossza, plan százalék
   const getPlanInfo = useCallback(
     async ({planNumber, onSuccess, onError})  => {
      try {
@@ -118,25 +129,258 @@ export const AvaxApeProvider = ({ children }) => {
 
        if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
        
-       return result
+        
      }
      catch (error){
        if (onError && typeof onError == 'function') onError(error)
      }
  }, [contractInterface])
 
+//plan száma 
+//return: (bn) plan százalék
+ const getPercent = useCallback(
+    async ({planNumber, onSuccess, onError})  => {
+    try {
+      const result = await contractInterface.getPercent(planNumber)
+
+      if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+      
+       
+    }
+    catch (error){
+      if (onError && typeof onError == 'function') onError(error)
+    }
+}, [contractInterface])
+
+//roi számláló
+//plan száma, érték
+//return: (bn, bn, bn) planhez százalék, profit számoló, befejezés idő 
+const getResult = useCallback(
+  async ({planNumber, value, onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getResult(planNumber, value)
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) kivehető egyenleg
+const getUserDividends = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserDividends(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) idk
+const getUserCheckpoint = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserCheckpoint(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (str) referrer address
+const getUserReferrer = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserReferrer(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn, bn, bn) lvl0, lvl1, lvl2 idk
+const getUserDownlineCount = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserDownlineCount(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) referral bonus
+const getUserReferralBonus = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserReferralBonus(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) total referral bonus
+const getUserReferralTotalBonus = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserReferralTotalBonus(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) withdrawn referral
+const getUserReferralWithdrawn = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserReferralWithdrawn(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) elérhető egyenleg
+const getUserAvailable = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserAvailable(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) ennyi db deposit
+const getUserAmountOfDeposits = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserAmountOfDeposits(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+//user address
+//return: (bn) depositok összege
+const getUserTotalDeposits = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserTotalDeposits(authState.data[0])
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+     
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
 
 
-  
+//user address
+//return (n, bn, bn, bn, bn, bn) deposit info
+//plan, percent, amount, profit, start, finish
+const getUserDepositInfo = useCallback(
+  async ({idx, onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.getUserDepositInfo(authState.data[0], idx)
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
+
+
+const getTotalStakedAmount = useCallback(
+  async ({onSuccess, onError})  => {
+  try {
+    const result = await contractInterface.totalStaked()
+
+    if(onSuccess && typeof onSuccess == 'function') onSuccess(result)
+    
+  }
+  catch (error){
+    if (onError && typeof onError == 'function') onError(error)
+  }
+}, [contractInterface])
 
 
   const contextData = {
     contractInterface,
     invest,
     withdraw,
+    getContractBalance,
     getPlanInfo,
-    getContractBalance
-    
+    getPercent,
+    getResult,
+    getUserDividends,
+    getUserCheckpoint,
+    getUserReferrer,
+    getUserDownlineCount,
+    getUserReferralBonus,
+    getUserReferralTotalBonus,
+    getUserReferralWithdrawn,
+    getUserAvailable,
+    getUserAmountOfDeposits,
+    getUserTotalDeposits,
+    getUserDepositInfo,
+    getTotalStakedAmount
   }
 
 

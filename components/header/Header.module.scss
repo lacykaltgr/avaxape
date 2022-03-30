@@ -1,25 +1,29 @@
-@import '../../styles/all';
+@import '../../styles/_all';
 
 .header {
   align-items: center;
   color: $c-light-text;
   display: flex;
   justify-content: space-between;
-  padding: $space-md;
-  width: 100%;
+  padding: $space-md + 20px ;
+  width: 100%; 
+  max-width: 1400px;
 
   &Title {
-    font-size: 18px;
+    font-size: 40px;
   }
 
   &Buttons {
     align-items: center;
     display: flex;
-    margin-left: auto;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    //margin-left: auto;
+    min-width: 100px;
   }
 
   &Link {
-    font-size: 14px;
+    font-size: 30px;
     text-decoration: none;
     margin-right: $space-sm;
 
@@ -30,16 +34,45 @@
 
   &Button {
     color: $c-light-text;
-    font-size: 12px;
-    padding: 4px 8px;
+    font-size: 30px;
+    padding: 8px 16px;
+    
   }
 
-  @media screen and (min-width: $bp-tablet) {
+  &Image {
+    margin-bottom: 20px;
+  }
+
+
+  @media screen and (max-width: 1100px) {
     padding: $space-md $padding-lg;
+    // color:red;
+    flex-direction: column;
+    .headerButtons {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      min-width: 100px;
+    }
+    .header {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .headerLink {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    margin: 0 auto
   }
 
   @media screen and (min-width: $bp-desktop) {
-    max-width: 1024px;
+    // max-width: 1024px;
     margin: 0 auto;
   }
 }

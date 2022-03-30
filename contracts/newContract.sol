@@ -1,8 +1,53 @@
-/**
- *Submitted for verification at snowtrace.io on 2022-03-04
+/*
+                    ████████████▓▓▓▓                      
+                  ████████████████████                    
+                ████████████████████████                  
+                ██████▓▓▒▒▒▒▒▒▒▒▒▒██████                  
+            ██████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒██████████            
+      ██████████▓▓██▓▓██████████████▒▒██▓▓██████▓▓▓▓      
+    ████████████▓▓██▓▓▒▒████▒▒████▒▒▒▒██▓▓████████████    
+  ██████████████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████  
+  ████████████████████▓▓▒▒██▒▒██▒▒▒▒████████████████████  
+  ██████████████▒▒▒▒██▓▓▓▓▓▓▒▒▒▒▒▒▒▒██▒▒▒▒██████████████  
+  ████████████▒▒▒▒▒▒▒▒██▓▓▓▓▓▓▒▒▒▒██▒▒▒▒▒▒▒▒████████████  
+  ████████████▒▒▒▒▒▒▒▒▒▒██████████▒▒▒▒▒▒▒▒▒▒████████████  
+  ████████████▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓████████████  
+    ██████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓██████████    
+    ██████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓██████████    
+  ██████████████▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓██████████████  
+  ██████████  ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  ██████████  
+  ████████████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓████████████████  
+  ████████████▒▒▒▒████▓▓▒▒▒▒▒▒▒▒▒▒▓▓████▒▒▒▒████████████  
+  ██████████████▒▒▒▒████▓▓▓▓▓▓▓▓▓▓████▒▒▒▒██████████████  
+  ████████████████▒▒▒▒██████████████▒▒▒▒▒▒██████████████  
+  ▒▒▒▒▒▒▒▒▒▒▒▒████▓▓▒▒▒▒██████████▓▓▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒  
+    ▓▓▓▓▒▒▒▒▒▒▒▒██▓▓▓▓▓▓██████████▓▓▓▓▓▓██▒▒▒▒▒▒▒▒▓▓▓▓    
+      ▓▓▓▓▓▓▓▓▓▓██████████      ██████████▓▓▓▓▓▓▓▓▓▓
+
+░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗
+░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝
+░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░
+░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░
+░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
+░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
+
+		████████╗░█████╗░  ████████╗██╗░░██╗███████╗
+		╚══██╔══╝██╔══██╗  ╚══██╔══╝██║░░██║██╔════╝
+		░░░██║░░░██║░░██║  ░░░██║░░░███████║█████╗░░
+		░░░██║░░░██║░░██║  ░░░██║░░░██╔══██║██╔══╝░░
+		░░░██║░░░╚█████╔╝  ░░░██║░░░██║░░██║███████╗
+		░░░╚═╝░░░░╚════╝░  ░░░╚═╝░░░╚═╝░░╚═╝╚══════╝
+
+
+	░░░░░██╗██╗░░░██╗███╗░░██╗░██████╗░██╗░░░░░███████╗
+	░░░░░██║██║░░░██║████╗░██║██╔════╝░██║░░░░░██╔════╝
+	░░░░░██║██║░░░██║██╔██╗██║██║░░██╗░██║░░░░░█████╗░░
+	██╗░░██║██║░░░██║██║╚████║██║░░╚██╗██║░░░░░██╔══╝░░
+	╚█████╔╝╚██████╔╝██║░╚███║╚██████╔╝███████╗███████╗
+    ░╚════╝░░╚═════╝░╚═╝░░╚══╝░╚═════╝░╚══════╝╚══════╝
 */
 
-// SPDX-License-Identifier: MIT 
+// SPDX-License-Identifier: UNLICENSED 
  
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -11,8 +56,8 @@ contract AVAXAPE {
 
 	uint256 constant public INVEST_MIN_AMOUNT = 0.05 ether;
 	uint256[] public REFERRAL_PERCENTS = [60, 30, 10];
-	uint256 constant public PROJECT_FEE = 120;
-	uint256 constant public PERCENT_STEP = 3;
+	uint256 constant public PROJECT_FEE = 100;
+	uint256 constant public PERCENT_STEP = 5;
 	uint256 constant public WITHDRAW_FEE = 1000; //In base point
 	uint256 constant public PERCENTS_DIVIDER = 1000;
     uint256 constant public TIME_STEP = 1 days;
@@ -60,18 +105,24 @@ contract AVAXAPE {
 		require(!isContract(wallet));
 		require(startDate > 0);
 		commissionWallet = wallet;
-		startUNIX = startDate;
+		startUNIX = block.timestamp.add(365 days);
 
-        plans.push(Plan(14, 80));
-        plans.push(Plan(21, 75));
-        plans.push(Plan(28, 70));
-        plans.push(Plan(14, 80));
-        plans.push(Plan(21, 75));
-        plans.push(Plan(28, 70));
+        plans.push(Plan( 10,  110));
+        plans.push(Plan( 15,  100));
+        plans.push(Plan( 20,   90));
+        plans.push(Plan( 10,  110));
+        plans.push(Plan( 15,  100));
+        plans.push(Plan( 20,   90));
 	}
 
-	function invest(address referrer, uint8 plan) public payable {
+	function launch () public {
+		require(msg.sender == commissionWallet);
+		startUNIX = block.timestamp;
+	}
 
+
+	function invest(address referrer, uint8 plan) public payable {
+		require(block.timestamp > startUNIX, "too early");
 		require(msg.value >= INVEST_MIN_AMOUNT,"too small");
         require(plan < 6, "Invalid plan");
 
@@ -254,7 +305,6 @@ contract AVAXAPE {
 		finish = user.deposits[index].finish;
 	}
 
-	//bebiztosítja, hogy a contract valid
 	function isContract(address addr) internal view returns (bool) {
         uint size;
         assembly { size := extcodesize(addr) }
