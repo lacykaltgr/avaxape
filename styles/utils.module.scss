@@ -1,0 +1,193 @@
+
+
+.form {
+  
+  &Submit {
+    background: $c-dark-text;
+    color: $c-light-text;
+    display: block;
+    margin: auto;
+    border: 2px solid $c-dark-text;
+    border-radius: $radius-s;
+    //padding: $space-xs;
+    height: 80px;
+    width: 180px;
+    text-align: center;
+    font-size: 20pt;
+
+    &:hover {
+      background: transparent;
+      color: $c-dark-text;
+      cursor: pointer;
+    }
+  }
+
+  &Input {
+    background: transparent;
+    border: 3px solid $c-blue-300;
+    border-radius: $radius-s;
+    padding: $space-xs;
+    outline: none;
+    margin-bottom: $space-sm;
+    height: 80%;
+    font-size: 20pt;
+    
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      border-color: $c-dark-text;
+    }
+  }
+
+  &InpDiv {
+      display: inline-block;
+      margin-top: 60px;
+      text-align: left;
+      height: 60px;
+  }
+  
+
+  &Notification {
+    font-size: 12px;
+    margin-bottom: $space-xs;
+    margin-top: $space-md;
+  }
+
+  &InpRow {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    * {
+      align-self: baseline;
+    }
+  }
+}
+
+.optionCard {
+  text-align: left;
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s $ease;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 250px;
+  flex: 1;
+  margin: 20px;
+  height: max-content;
+  cursor: pointer;
+  background-color: white;
+  
+  &:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  }
+
+  &.Selected {
+    text-align: left;
+  
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    scale: 1.1;
+    cursor: pointer;
+    border: 6px solid #478bfb;
+
+    &Locked{
+      text-align: left;
+  
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 10px;
+      scale: 1.1;
+      cursor: pointer;
+      border: 6px solid gold;
+    }
+
+    .cardFooter {
+      border-width: 4px;
+    }
+
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+  }
+  .cardFooter{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: end;
+    border: 2px solid black;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+  }
+  h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+  }
+  h6 {
+    font-size: 1.5rem;
+    //border-bottom: 1px solid gray;
+  }
+  p {
+    text-align: end;
+    padding-right: 1 rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+  .innerCard  * {
+    margin: 0.5rem 0;
+  }
+}
+.optionCards {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
+.card {
+  border-radius: $radius-m;
+  color: $c-dark-text;
+  margin: 5px 0 20px;
+  padding: 40px 0 40px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  display: inline-block;
+  border: 6px solid darkblue;
+
+  &Locked{
+    border-radius: $radius-m;
+    color: $c-dark-text;
+    margin: 20px 0 20px;
+    padding: 40px 0 40px;
+    width: 100%;
+    height: 100%;
+    background: $c-white;
+    text-align: center;
+    display: inline-block;
+    border: 6px solid gold;
+  }
+}
+
+.counter {
+  display: inline-block;
+  font-size: 20pt;
+}
+
+.data {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+
+  @media screen and (max-width: 800px) {
+      .data {
+          flex-direction: column;
+      }
+  }

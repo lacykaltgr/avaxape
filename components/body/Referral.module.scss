@@ -1,0 +1,68 @@
+@import '../../styles/_all';
+
+
+.card {
+  max-height: 850px;
+  border: 6px solid orange;
+
+
+
+  p {
+    font-size: 30pt;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size:  15pt;
+  }
+
+  .refaddress {
+    
+    font-size: 15pt;
+
+
+    &Box {
+      padding: 5px;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px solid blue;
+      display: flex;
+      justify-content: space-around;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 70px;
+    }
+  }
+}
+
+.data {
+  margin-bottom: 60px;
+}
+
+.copy {
+  height: 40px;
+  width: 40px;
+  border: 3px solid blue;
+  border-radius: 10px;
+  background-color: white;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .refaddressBox {
+    flex-direction: column;
+    width: fit-content;
+    padding: 0;
+  }
+
+  .refaddress {
+    display: none;
+  }
+}
+

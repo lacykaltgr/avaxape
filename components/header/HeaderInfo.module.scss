@@ -1,0 +1,33 @@
+@import '../../styles/_all';
+
+.headerinfo {
+    align-items: center;
+    color: $c-light-text;
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    &Text {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        text-align: center;
+        //font-weight: bold;
+        font-size: 12pt;
+    }
+
+    &Data  {
+        text-align: center;
+        font-weight: 1000;   
+        font-size: 20pt;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+  }
