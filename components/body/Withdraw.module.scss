@@ -2,22 +2,56 @@
 
 
 .card {
-  border: 6px solid #478bfb;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  //border: 6px solid #478bfb;
+  background-color: rgba($color: #09244d, $alpha: 1.0);
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 40%;
+  margin-right: 30px;
+  height: 500px;
+  color: white;
 
-  p {
-    font-size: 20pt;
+  h1 {
+    font-size: 30pt;
+    font-weight: 1000;
   }
 
   h4 {
     font-size:  15pt;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
   }
 
   p {
-    font-size: 30pt;
+    font-size: 27pt;
     font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 80px;
+  }
+
+  .formSubmit {
+      background: #09244d;//$c-dark-text;
+      color: darkgoldenrod;
+      border: 6px solid darkgoldenrod;
+      border-radius: 50px;
+      
+  
+      &:hover {
+        background: darkgoldenrod;
+        color: white;
+        border: 6px solid darkgoldenrod;
+      }
   }
 }
 
+@media screen and (max-width: 1500px) {
+  .card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    height: auto;
+  }
+}

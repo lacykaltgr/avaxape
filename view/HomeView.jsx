@@ -13,10 +13,17 @@ const { invest, withdraw } =
 
   return (
     <div className={styles.home}>
-      <h1>Choose Your Plan</h1>
+      <div className={styles.Title}>
+        <h1 >Welcome to the <span>Jungle!</span></h1>
+      </div>
+      
+      <h1 className={styles.Title2}>Choose Your Plan</h1>
       <Invest />
-      <Withdraw />
-      <Referral />
+      <div className={styles.Actions}>
+        <Withdraw />
+        <Referral />
+      </div>
+
       <DepositInfo />
     </div>
   )

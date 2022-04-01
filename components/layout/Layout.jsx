@@ -3,7 +3,6 @@ import Head from 'next/head'
 import HeaderInfo from '../header/HeaderInfo'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
-import Error from '../error/Error'
 
 import { useAuthContext } from '../../context/auth/authContext'
 import { ACCOUNTS_ERROR } from '../../context/auth/authReducer'
@@ -31,11 +30,11 @@ export default function Layout({
   const hasAccountError = authState.status === ACCOUNTS_ERROR || authState.error
 
   return (
-    <div className={styles.layout} style={{backgroundImage: "url(" + `${require("../../logo/ape.jpg")}` + ")" , width: "100%",
-    
-    backgroundRepeat: "no-repeat",
+    <div className={styles.layout} style={{
+      backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
-    backgroundSize: "cover"}}>
+   backgroundSize: "cover",
+    backgroundPosition: "0% 0%"}}>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -43,14 +42,13 @@ export default function Layout({
         <meta name="og:title" content={pageTitle} />
         <meta name="og:description" content={pageDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel = "icon" href ="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" 
-        type = "image/x-icon"></link>
+         <link rel="icon" href="/apebase.png" />
       </Head>
       <HeaderInfo />
       <Header />
 
       <main className={styles.layoutMain}>
-        {hasAccountError ? <Error /> : childrenWithProps}
+        {childrenWithProps}
       </main>
       
 

@@ -33,18 +33,19 @@
   }
 
   &Button {
-    color: $c-light-text;
+    color: #516b1b ;//$c-light-text;
     font-size: 30px;
     padding: 8px 16px;
     
   }
 
-  &Image {
+  img {
     margin-bottom: 20px;
+    width: 350px;
   }
 
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1210px) {
     padding: $space-md $padding-lg;
     // color:red;
     flex-direction: column;

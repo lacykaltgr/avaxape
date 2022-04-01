@@ -3,11 +3,16 @@
 .layout {
   height: 100%;
   margin: auto;
-  background-image: url('../../logo/ape.jpg');
+  width: 100%;
+  background-color: black;
+  background-image: url('');
+  
+  background-position: center;
+
+  background-attachment: "fixed";
 
   &Main {
     min-height: 85vh;
     //padding: $space-md $padding-sm;
   }
-
 }

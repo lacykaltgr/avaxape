@@ -65,26 +65,26 @@ export default function Referral() {
 
   const renderDownlineCount = () => {
     if (!referrals.count) {
-      return <p>-</p>
+      return <h5>-</h5>
     }
-    return (<p>{referrals.count.toString()}</p>)
+    return (<h5>{referrals.count.toString()}</h5>)
   }
 
   const renderReferralBonus = () => {
     if (!referrals.bonus) {
-      return <p>-</p>
+      return <h5>-</h5>
     }
-    return (<p>{(referrals.bonus / 1000000000000000000).toString()}</p>)
+    return (<h5>{(referrals.bonus / 1000000000000000000).toFixed(3).toString()} AVAX</h5>)
   }
 
   const renderReferralWithdrawn = () => {
     if (!referrals.withdrawn) {
-      return <p>-</p>
+      return <h5>-</h5>
     }
-    return (<p>{(referrals.withdrawn / 1000000000000000000).toString()}</p>)
+    return (<h5>{(referrals.withdrawn / 1000000000000000000).toFixed(3).toString()} AVAX</h5>)
   }
 
-  const referralCode = "https://avaxape.com/?ref=" + authState.data[0].toString()
+  const referralCode = authState.data[0] ? "https://avaxape.com/?ref=" + authState.data[0].toString() : ""
 
   const renderRedferralCode = () => {
     if (!isConnected) {
@@ -116,7 +116,7 @@ export default function Referral() {
 
       </div>
 
-      <h4>Your referral code is:</h4>
+      <h2>Your referral code:</h2>
       <div className={styles.refaddressBox}>
         {renderRedferralCode()}
         <button className={styles.copy} onClick={async () => await navigator.clipboard.writeText(referralCode)}>
@@ -127,7 +127,12 @@ export default function Referral() {
           </svg>
         </button>
       </div>
-
+      <div className={styles.levels}>
+        <h6>6% from each level 1 referral</h6>
+        <h6>3% from each level 2 referral</h6>
+        <h6>1% from each level 3 referral</h6>
+      </div>
+      <h6>Note! You need to have at least 1 deposit to start receiving earnings</h6>
 
 
     </div>

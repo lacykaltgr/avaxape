@@ -2,56 +2,100 @@
 
 
 .card {
-  border: 6px solid #478bfb;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  //border: 6px solid #478bfb;
+  background-color: rgba($color: #09244d, $alpha: 1.0);
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 55%;
+  height: 500px;
 
 
-  p {
+  h1 {
+    margin-top: 0;
     font-size: 30pt;
-    font-weight: bold;
+    font-weight: 1000;
+    color: white;
   }
 
   h4 {
     font-size:  15pt;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    color: white;
   }
 
-  .refaddress {
+  h2 {
+    font-size:  15pt;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  h5 {
+    font-size: 23pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  h6 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size:  10pt;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .levels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+.refaddress {
     
-    font-size: 15pt;
+  font-size: 12pt;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+  
 
+  &Box {
+    background-color: white;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+    //border: 6px solid #c7a23b;
+    display: flex;
+    justify-content: space-around;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 70px;
+    width: fit-content;
+    margin-bottom: 10px;
 
-    &Box {
-      background-color: white;
-      padding: 5px;
-      align-items: center;
-      border-radius: 10px;
-      border: 6px solid gold;
-      display: flex;
-      justify-content: space-around;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      max-height: 70px;
+    p {
+      margin-right: 10px;
     }
   }
 }
 
-.data {
-  margin-bottom: 60px;
+
 }
+
+
 
 .copy {
   height: 40px;
   width: 40px;
-  border: 3px solid gold;
+  border: 3px solid #09244d;
   border-radius: 10px;
   background-color: white;
-
+  color: darkgoldenrod;
   &:hover {
-    background-color: gold;
-    color: white;
+    background-color: #09244d;
+    color: gold;
   }
 }
 
@@ -61,10 +105,23 @@
     flex-direction: column;
     width: fit-content;
     padding: 0;
+     p {
+       display: none;
+     }
+
   }
 
-  .refaddress {
-    display: none;
+
+  .card {
+    height: auto;
   }
+
+
 }
 
+
+@media screen and (max-width: 1500px) {
+  .card {
+    width: 100%;
+  }
+}

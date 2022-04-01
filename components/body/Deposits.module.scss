@@ -8,105 +8,61 @@ $mobile-small: 460px;
 $mobile: 720px;
 
 
-  .form {
-  
-    &SubmitDiv {
-      text-align: center;
-    }
-  
-    &Submit {
-      background: $c-dark-text;
-      color: $c-light-text;
-      display: inline-flex;
-      border: 1px solid $c-dark-text;
-      border-radius: $radius-s;
-      padding: $space-xs;
-      height: 40px;
-      width: 90px;
-      text-align: center;
-  
-      &:hover {
-        background: transparent;
-        color: $c-dark-text;
-        cursor: pointer;
-      }
-    }
-  
-
-  }
-
-  .card {
-      min-height: 100px;
-
-      table {
-        display: block;
-        width: 100%;
-        align-items: center;
-      }
-
-      tr {
-        padding-bottom: 10px;
-      }
-      td {
-        padding: 10px 10px 0;
-        text-align: center;
-        font-size: 16pt;
-        background-color: darkslateblue;
-        color: white;
-        margin: auto; 
-        &:before {
-          content: attr(data-title);
-          color: lighten($rain,35%);
-          text-transform: uppercase;
-          font-size: 1.4rem;
-          padding-right: 10px;
-          display: block;
-        }
-      }
-      
-      th {
-        text-align: left;
-        font-weight: 1000;
-        font-size: 20pt;
-      }
-      thead {
-        th {
-          background-color: darken($rain,6%);
-          color: #fff;
-          border: 1px solid darken($rain,6%);
-        }
-      }
-      tfoot {
-        th {
-          display: block;
-          padding: 10px;
-          text-align: center;
-          color: lighten($rain,55%);
-        }
-      }
-  }
-
-
 .card {
-  border: 6px solid #478bfb;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+  background-color: #11465c;
   margin-top: 20px;
   margin-bottom: 20px;
+  min-height: 100px;
 
   p {
     font-size: 20pt;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   h4 {
-    font-size:  15pt;
+    font-size:  30pt;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: darkgoldenrod;
   }
 
   p {
     font-size: 30pt;
     font-weight: bold;
+    color: white;
   }
-}
 
+  td, th {
+    padding: 8px;
+    color: white;
+    text-align: left;
+  }
+  
+  
+  tr{background-color: transparent}
+  
+  tr:hover {background-color: rgba(0, 0, 0, 0.5);}
+
+  tr:hover {background-color: #11465c;}
+  
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: transparent;
+    color: darkgoldenrod;
+    border-bottom: 3px solid darkgoldenrod;
+  }
+  table {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  
+
+
+}
 
 
 

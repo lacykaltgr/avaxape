@@ -67,19 +67,21 @@ export default function DepositInfo() {
 
     const renderDepositInfo = () => {
         if (deposits.ready != 2) {
-            return <p>-</p>
+            return
         }
         deposits.data.sort((a, b) => a.start < b.start)
         return deposits.data.map((deposit) => {
             const { plan, percent, amount, profit, start, finish } = deposit
+            const plans = []
+            //plan = plans[plan]
             return (
                 <tr>
                     <td>{plan.toString()}</td>
-                    <td>{percent.toString()}</td>
-                    <td>{profit.toString()}</td>
+                    <td>{(percent/10).toString()}%</td>
+                    <td>{(profit/1000000000000000000).toFixed(3).toString()} AVAX</td>
                     <td>{start.toString()}</td>
                     <td>{finish.toString()}</td>
-                    <td>{amount.toString()}</td>
+                    <td>{(amount/1000000000000000000).toFixed(3).toString()} AVAX</td>
                 </tr>
             )
         })
@@ -95,7 +97,6 @@ export default function DepositInfo() {
 
     return (
         <div className={styles.card}>
-            {renderDepositsAmount()}
             <h4>Deposits</h4>
             <table>
                 <tbody>

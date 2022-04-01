@@ -4,7 +4,7 @@ import HomeView from '../view/HomeView'
 export default function Home() {
   return (
     <Layout
-      pageTitle=  "Home | AvaxApe"
+      pageTitle=  "AvaxApe"
       pageDescription=""
     >
       <HomeView />

@@ -3,24 +3,24 @@
 .button {
   background: transparent;
   border-style: none;
-  border: 2px solid $c-blue-500;
+  border: 2px solid #516b1b;//$c-blue-500;
   border-radius: 8px;
   cursor: pointer;
   padding: 16px 32px;
   transition: ease 300ms background-color, ease 300ms border-color, ease 300ms color;
 
   &:hover {
-    background: $c-blue-500;
+    background: #516b1b;//$c-blue-500;
     color: $c-light-text;
   }
 
   &Active {
-    background: $c-blue-500;
+    background: transparent;//$c-blue-500;
     color: $c-light-text;
 
     &:hover {
-      background: $c-light-text;
-      color: $c-blue-500;
+      background: #516b1b;
+      color: white;//$c-blue-500;
     }
   }
 }

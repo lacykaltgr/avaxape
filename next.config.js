@@ -1,3 +1,11 @@
+/*
+const optimizedImages = require('next-optimized-images');
+//const withImages = require('next-images')
+module.exports = optimizedImages()
 
-const withImages = require('next-images')
-module.exports = withImages()
+/*
+<Image 
+src={logo}
+width={400}
+height={100}
+/>*/

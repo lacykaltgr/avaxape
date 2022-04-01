@@ -52,14 +52,14 @@ export default function Withdraw() {
     if (!deposits.total) {
       return <p>-</p>
     }
-    return (<p>{(deposits.total / 1000000000000000000).toString()} AVAX</p>)
+    return (<p>{(deposits.total / 1000000000000000000).toFixed(3).toString()} AVAX</p>)
   }
 
   const renderDepositsAvailable = (i) => {
     if (!deposits.available) {
       return <p>-</p>
     }
-    return (<p>{(deposits.available / 1000000000000000000).toString()} AVAX</p>)
+    return (<p>{(deposits.available / 1000000000000000000).toFixed(3).toString()} AVAX</p>)
 
   }
 
@@ -126,10 +126,6 @@ export default function Withdraw() {
           Withdraw
         </button>
       </div>
-      <p>{transactionState.state === 'loading'
-        ? 'Sending message...'
-        : ''}
-      </p>
 
     </div>
   )
